@@ -8,9 +8,82 @@ from streamlit_lottie import st_lottie
 import requests
 import plotly.graph_objects as go
 import time # For animation
+import base64 # Required for background image functions
 
+# --- Page Configuration ---
 # Removed 'icon' argument for broader compatibility
 st.set_page_config(page_title="Quantum Explained", layout="wide")
+
+# --- Background Setting Function ---
+# This function applies a custom background to the Streamlit app.
+# You can choose between an image background or a solid/gradient color.
+def set_background(image_file=None, gradient_colors=None):
+    """
+    Sets a background for the Streamlit app.
+    Args:
+        image_file (str, optional): The path to the background image file. Defaults to None.
+        gradient_colors (list, optional): A list of two or more hex color codes for a gradient background. E.g., ['#F0F2F6', '#DCDCDC']. Defaults to None.
+    """
+    if image_file:
+        with open(image_file, "rb") as f:
+            data = f.read()
+        b64 = base64.b64encode(data).decode()
+        bg_style = f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{b64}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }}
+        </style>
+        """
+    elif gradient_colors and len(gradient_colors) >= 2:
+        # Example: linear-gradient(to right, #F0F2F6, #DCDCDC);
+        gradient_str = ", ".join(gradient_colors)
+        bg_style = f"""
+        <style>
+        .stApp {{
+            background: linear-gradient(to bottom right, {gradient_str});
+            background-attachment: fixed;
+        }}
+        </style>
+        """
+    else:
+        # Default fallback to a simple light grey if no specific background is chosen
+        bg_style = f"""
+        <style>
+        .stApp {{
+            background-color: #f0f2f6;
+            background-attachment: fixed;
+        }}
+        </style>
+        """
+    st.markdown(bg_style, unsafe_allow_html=True)
+
+# --- Apply Background ---
+# **Choose ONE of the options below by uncommenting it:**
+
+# Option 1: Image Background
+# set_background(image_file='./your_background_image.png')
+# IMPORTANT: Make sure 'your_background_image.png' is in your GitHub repo!
+
+# Option 2: Gradient Background (Recommended for a clean, modern look)
+set_background(gradient_colors=['#000000', '#2C3E50']) # Dark gradient for a sleek, cosmic feel
+# You can try other gradients, e.g., ['#F0F2F6', '#DCDCDC'] for light gray, or ['#ADD8E6', '#87CEEB'] for light blue
+
+# Option 3: Solid Color Background (if you want something very simple)
+# st.markdown(
+#     f"""
+#     <style>
+#     .stApp {{
+#         background-color: #f0f2f6; /* A light grey */
+#     }}
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
+
 
 # --- Helper Functions for Lottie Animations ---
 @st.cache_data
@@ -41,7 +114,7 @@ animation_speed = st.slider("Electron Orbit Speed", 0.1, 2.0, 1.0, 0.1)
 atomic_structure_placeholder = st.empty()
 
 # Animation loop for electrons
-for i in range(100):
+for i in range(100): # Loop for 100 frames of animation
     t = i * 0.05 * animation_speed # Time variable for animation
 
     # Nucleus
@@ -76,8 +149,8 @@ for i in range(100):
         showlegend=False,
         width=700,
         height=500,
-        plot_bgcolor="black",
-        paper_bgcolor="black", # Background color for the entire figure
+        plot_bgcolor="black", # Background color for the plot area
+        paper_bgcolor="black", # Background color for the entire figure (outside the plot area)
         margin=dict(l=0, r=0, t=0, b=0)
     )
     with atomic_structure_placeholder:
@@ -109,7 +182,7 @@ if choice == "☮️ Peace":
                      use_container_width=True)
 
     st.subheader("📖 Fundamental Scientific Principles")
-    st.code("E = mc²  # Einstein's Energy-Mass Equivalence: The foundational principle behind nuclear energy, showing that mass can be converted into immense amounts of energy.", language="python")
+    st.code("E = mc² # Einstein's Energy-Mass Equivalence: The foundational principle behind nuclear energy, showing that mass can be converted into immense amounts of energy.", language="python")
     st.code("Ψ(x,t) # Wave Function (Schrödinger Equation): Describes the probability amplitude of a quantum particle's position and momentum, crucial for understanding atomic behavior.", language="python")
     st.markdown("> **\"He who sees all beings in the self and the self in all beings does not hate. When a man sees God in every creature, he cannot injure himself or others.\"** — *Bhagavad Gita, Chapter 6, Verse 30*")
 
@@ -237,26 +310,3 @@ st.markdown("</div>", unsafe_allow_html=True) # Close flex container
 st.markdown("---")
 st.caption("Created by Nakul | Powered by Streamlit & Quantum Insights | Inspired by the profound ethics of scientific discovery.")
 st.markdown("<p style='text-align: center; color: gray;'>**Your choices shape the future of quantum applications.**</p>", unsafe_allow_html=True)
-
-import base64
-import streamlit as st # Make sure streamlit is imported
-
-def set_background(image_file):
-    with open(image_file, "rb") as f:
-        data = f.read()
-    b64 = base64.b64encode(data).decode()
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url("data:image/png;base64,{b64}");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-# Apni image file ka naam yahan par daalo (yeh file aapki app ke saath honi chahiye)
-set_background('./your_background_image.png') # Corrected: Closing parenthesis added here
