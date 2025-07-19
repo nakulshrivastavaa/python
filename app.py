@@ -237,3 +237,25 @@ st.markdown("</div>", unsafe_allow_html=True) # Close flex container
 st.markdown("---")
 st.caption("Created by Nakul | Powered by Streamlit & Quantum Insights | Inspired by the profound ethics of scientific discovery.")
 st.markdown("<p style='text-align: center; color: gray;'>**Your choices shape the future of quantum applications.**</p>", unsafe_allow_html=True)
+
+import base64
+
+def set_background(image_file):
+    with open(image_file, "rb") as f:
+        data = f.read()
+    b64 = base64.b64encode(data).decode()
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{b64}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Apni image file ka naam yahan par daalo (yeh file aapki app ke saath honi chahiye)
+set_background('./your_background_image.png'
