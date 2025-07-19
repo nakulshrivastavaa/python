@@ -239,6 +239,7 @@ st.caption("Created by Nakul | Powered by Streamlit & Quantum Insights | Inspire
 st.markdown("<p style='text-align: center; color: gray;'>**Your choices shape the future of quantum applications.**</p>", unsafe_allow_html=True)
 
 import base64
+import streamlit as st # Make sure streamlit is imported
 
 def set_background(image_file):
     with open(image_file, "rb") as f:
@@ -258,4 +259,4 @@ def set_background(image_file):
     )
 
 # Apni image file ka naam yahan par daalo (yeh file aapki app ke saath honi chahiye)
-set_background('./your_background_image.png'
+set_background('./your_background_image.png') # Corrected: Closing parenthesis added here
