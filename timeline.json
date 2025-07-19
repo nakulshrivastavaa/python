@@ -1,58 +1,124 @@
 [
   {
-    "start_date": {"year": "1900"},
-    "text": {"headline": "Planck's Quantum Hypothesis", "text": "Max Planck introduces the idea that energy is emitted or absorbed in discrete packets called quanta, solving the black-body radiation problem."}
+    "start_date": {
+      "year": "1900",
+      "month": "12",
+      "day": "14"
+    },
+    "text": {
+      "headline": "Planck's Quantum Hypothesis",
+      "text": "Max Planck introduces the idea that energy is emitted or absorbed in discrete packets called quanta, marking the birth of quantum mechanics."
+    },
+    "display_date": "December 14, 1900"
   },
   {
-    "start_date": {"year": "1905"},
-    "text": {"headline": "Einstein and the Photoelectric Effect", "text": "Albert Einstein explains the photoelectric effect by postulating that light consists of particles called photons, building on Planck's work."}
+    "start_date": {
+      "year": "1905"
+    },
+    "text": {
+      "headline": "Einstein and the Photoelectric Effect",
+      "text": "Albert Einstein explains the photoelectric effect by postulating that light consists of discrete energy quanta (photons)."
+    },
+    "display_date": "1905"
   },
   {
-    "start_date": {"year": "1913"},
-    "text": {"headline": "Bohr Model of the Atom", "text": "Niels Bohr proposes a model where electrons orbit the nucleus in specific energy levels, explaining atomic spectra."}
+    "start_date": {
+      "year": "1913"
+    },
+    "text": {
+      "headline": "Bohr Model of the Atom",
+      "text": "Niels Bohr proposes a model where electrons orbit the nucleus in specific energy levels, explaining atomic spectra."
+    },
+    "display_date": "1913"
   },
   {
-    "start_date": {"year": "1926"},
-    "text": {"headline": "Schrödinger Equation", "text": "Erwin Schrödinger develops the wave equation that describes how the quantum state of a physical system changes over time."}
+    "start_date": {
+      "year": "1925"
+    },
+    "text": {
+      "headline": "Heisenberg's Matrix Mechanics",
+      "text": "Werner Heisenberg develops a mathematical framework for quantum mechanics based on matrices."
+    },
+    "display_date": "1925"
   },
   {
-    "start_date": {"year": "1927"},
-    "text": {"headline": "Heisenberg's Uncertainty Principle", "text": "Werner Heisenberg states that it is impossible to simultaneously know precisely both the position and momentum of a particle."}
+    "start_date": {
+      "year": "1926"
+    },
+    "text": {
+      "headline": "Schrödinger's Wave Equation",
+      "text": "Erwin Schrödinger formulates a differential equation that describes how the quantum state of a physical system evolves over time."
+    },
+    "display_date": "1926"
   },
   {
-    "start_date": {"year": "1938"},
-    "text": {"headline": "Nuclear Fission Discovered", "text": "Otto Hahn and Fritz Strassmann discover nuclear fission, the process by which an atom's nucleus splits into smaller parts."}
+    "start_date": {
+      "year": "1927"
+    },
+    "text": {
+      "headline": "Heisenberg's Uncertainty Principle",
+      "text": "Heisenberg states that it's impossible to simultaneously know precisely both the position and momentum of a particle."
+    },
+    "display_date": "1927"
   },
   {
-    "start_date": {"year": "1942"},
-    "text": {"headline": "First Self-Sustaining Nuclear Chain Reaction", "text": "Enrico Fermi leads the team achieving the first self-sustaining nuclear chain reaction at the University of Chicago."}
+    "start_date": {
+      "year": "1942"
+    },
+    "text": {
+      "headline": "First Self-Sustaining Nuclear Chain Reaction",
+      "text": "Enrico Fermi leads the team achieving the first controlled nuclear chain reaction at the University of Chicago."
+    },
+    "display_date": "December 2, 1942"
   },
   {
-    "start_date": {"year": "1945"},
-    "text": {"headline": "Atomic Bombs on Hiroshima and Nagasaki", "text": "The first and only use of atomic weapons in warfare occurs, demonstrating the destructive power of nuclear fission."}
+    "start_date": {
+      "year": "1945"
+    },
+    "text": {
+      "headline": "Atomic Bombs Used (Hiroshima & Nagasaki)",
+      "text": "The first and only use of atomic weapons in warfare."
+    },
+    "display_date": "August 1945"
   },
   {
-    "start_date": {"year": "1954"},
-    "text": {"headline": "First Nuclear Power Plant", "text": "The Obninsk Nuclear Power Plant in the Soviet Union becomes the world's first nuclear power plant to generate electricity for a power grid."}
+    "start_date": {
+      "year": "1947"
+    },
+    "text": {
+      "headline": "Discovery of the Transistor",
+      "text": "John Bardeen, Walter Brattain, and William Shockley invent the transistor, a key component in modern electronics, rooted in quantum mechanics."
+    },
+    "display_date": "1947"
   },
   {
-    "start_date": {"year": "1960"},
-    "text": {"headline": "First Working Laser", "text": "Theodore Maiman invents the first working laser, a device that amplifies light by stimulated emission of radiation."}
+    "start_date": {
+      "year": "1964"
+    },
+    "text": {
+      "headline": "Bell's Theorem",
+      "text": "John Bell proposes a theorem that could experimentally test local realism versus quantum entanglement."
+    },
+    "display_date": "1964"
   },
   {
-    "start_date": {"year": "1980"},
-    "text": {"headline": "Quantum Computing Concepts Emerge", "text": "Paul Benioff introduces the concept of a quantum mechanical model of a Turing machine."}
+    "start_date": {
+      "year": "2000"
+    },
+    "text": {
+      "headline": "Quantum Computing Advances",
+      "text": "Significant strides in quantum computing research begin, with early prototypes and theoretical breakthroughs."
+    },
+    "display_date": "2000s"
   },
   {
-    "start_date": {"year": "1994"},
-    "text": {"headline": "Shor's Algorithm for Quantum Computers", "text": "Peter Shor develops an algorithm that allows a quantum computer to factor large integers much faster than any known classical algorithm, posing a threat to current encryption methods."}
-  },
-  {
-    "start_date": {"year": "2000"},
-    "text": {"headline": "First NMR Quantum Computer", "text": "Researchers build the first 5-qubit NMR quantum computer."}
-  },
-  {
-    "start_date": {"year": "2019"},
-    "text": {"headline": "Quantum Supremacy Claim", "text": "Google's Sycamore processor reportedly performs a computation in 200 seconds that would take the fastest supercomputer 10,000 years, achieving 'quantum supremacy'."}
+    "start_date": {
+      "year": "2019"
+    },
+    "text": {
+      "headline": "Quantum Supremacy Claim (Google)",
+      "text": "Google announces its Sycamore processor achieved quantum supremacy, performing a calculation beyond the capabilities of classical supercomputers."
+    },
+    "display_date": "2019"
   }
 ]
